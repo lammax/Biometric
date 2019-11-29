@@ -13,10 +13,11 @@
 		04325DE02391822100C84849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04325DDE2391822100C84849 /* Main.storyboard */; };
 		04325DE22391822300C84849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04325DE12391822300C84849 /* Assets.xcassets */; };
 		04325DE52391822300C84849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04325DE32391822300C84849 /* LaunchScreen.storyboard */; };
+		04325DEF2391825E00C84849 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04325DED2391824200C84849 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04325DD52391822100C84849 /* biometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = biometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04325DD52391822100C84849 /* Biometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04325DD82391822100C84849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04325DDA2391822100C84849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04325DDC2391822100C84849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		04325DE12391822300C84849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04325DE42391822300C84849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04325DE62391822300C84849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04325DED2391824200C84849 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04325DEF2391825E00C84849 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,13 +45,14 @@
 			children = (
 				04325DD72391822100C84849 /* biometric */,
 				04325DD62391822100C84849 /* Products */,
+				04325DEC2391824200C84849 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		04325DD62391822100C84849 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04325DD52391822100C84849 /* biometric.app */,
+				04325DD52391822100C84849 /* Biometric.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +69,14 @@
 				04325DE62391822300C84849 /* Info.plist */,
 			);
 			path = biometric;
+			sourceTree = "<group>";
+		};
+		04325DEC2391824200C84849 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04325DED2391824200C84849 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +96,7 @@
 			);
 			name = biometric;
 			productName = biometric;
-			productReference = 04325DD52391822100C84849 /* biometric.app */;
+			productReference = 04325DD52391822100C84849 /* Biometric.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -292,9 +304,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Biometric;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,9 +322,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Biometric;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
