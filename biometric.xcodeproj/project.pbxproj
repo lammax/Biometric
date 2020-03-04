@@ -26,6 +26,7 @@
 		04325DE42391822300C84849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04325DE62391822300C84849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04325DED2391824200C84849 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		04EBF358240FF16400B901FF /* Biometric.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Biometric.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		04325DD72391822100C84849 /* biometric */ = {
 			isa = PBXGroup;
 			children = (
+				04EBF358240FF16400B901FF /* Biometric.entitlements */,
 				04325DD82391822100C84849 /* AppDelegate.swift */,
 				04325DDA2391822100C84849 /* SceneDelegate.swift */,
 				04325DDC2391822100C84849 /* ViewController.swift */,
@@ -296,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = biometric/Biometric.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8JVJD6M2F;
 				INFOPLIST_FILE = biometric/Info.plist;
@@ -314,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = biometric/Biometric.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8JVJD6M2F;
 				INFOPLIST_FILE = biometric/Info.plist;
