@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        authenticationWithTouchID()
+        //authenticationWithTouchID()
         //setupAppleAuthorization()
         //setupNotificationCenter()
     }
@@ -38,9 +38,9 @@ class ViewController: UIViewController {
         var authorizationError: NSError?
         let reason = "Приложите палец чтобы войти в приложение"
 
-        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorizationError) {
+        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authorizationError) {
             
-            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
+            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, evaluateError in
                 
                 var title = "Success"
                 var message = "Authenticated succesfully!"
@@ -116,7 +116,8 @@ class ViewController: UIViewController {
     }
     @IBAction func appleSignInPressed(_ sender: UIButton) {
         //Apple login button 2nd variant
-        handleAuthorizationAppleIDButtonPress()
+        //handleAuthorizationAppleIDButtonPress()
+        authenticationWithTouchID()
     }
     
 }

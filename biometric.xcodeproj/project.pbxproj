@@ -300,13 +300,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = biometric/Biometric.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8JVJD6M2F;
+				DEVELOPMENT_TEAM = TNU3Q75UAH;
 				INFOPLIST_FILE = biometric/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric2;
 				PRODUCT_NAME = Biometric;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -319,13 +319,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = biometric/Biometric.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8JVJD6M2F;
+				DEVELOPMENT_TEAM = TNU3Q75UAH;
 				INFOPLIST_FILE = biometric/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.study.biometric2;
 				PRODUCT_NAME = Biometric;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
