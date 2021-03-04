@@ -11,6 +11,12 @@ import AuthenticationServices
 import UIKit
 import LocalAuthentication
 
+// https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/buttons/
+// https://help.apple.com/developer-account/#/devcdfbb56a3
+// https://engineering.q42.nl/sign-in-with-apple/
+// https://support.apple.com/ru-ru/HT210318
+// https://developer.apple.com/videos/play/wwdc2019/706/
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var authView: UIView!
@@ -20,35 +26,38 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //authenticationWithTouchID()
-        setupAppleAuthorization()
+        authenticationWithTouchID()
+        //setupAppleAuthorization()
+        //setupNotificationCenter()
     }
 
     func authenticationWithTouchID() {
         let localAuthenticationContext = LAContext()
-        localAuthenticationContext.localizedFallbackTitle = "Please use your Passcode"
+        localAuthenticationContext.localizedFallbackTitle = "Ввести 5-значный пароль"
 
         var authorizationError: NSError?
-        let reason = "Authentication required to access the secure data"
+        let reason = "Приложите палец чтобы войти в приложение"
 
         if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authorizationError) {
             
             localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
                 
-                if success {
-                    DispatchQueue.main.async() {
-                        let alert = UIAlertController(title: "Success", message: "Authenticated succesfully!", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                    
-                } else {
+                var title = "Success"
+                var message = "Authenticated succesfully!"
+                
+                if !success {
                     // Failed to authenticate
                     guard let error = evaluateError else {
                         return
                     }
-                    print(error)
+                    title = "Error"
+                    message = error.localizedDescription
+                }
                 
+                DispatchQueue.main.async() {
+                    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         } else {
@@ -60,12 +69,20 @@ class ViewController: UIViewController {
         }
     }
     
+    func setupNotificationCenter() {
+        let center = NotificationCenter.default
+        //let name = NSNotification.Name.creden
+        //KeychainItem
+    }
+    
+    //Apple SignIn
     func setupAppleAuthorization() {
         setupProviderLoginView()
     }
-    
+
     func setupProviderLoginView() {
-        let button = ASAuthorizationAppleIDButton()
+        //Apple login button 1st variant
+        let button = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
         button.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
         self.authView.addSubview(button)
     }
@@ -92,10 +109,16 @@ class ViewController: UIViewController {
                 print("AppleID not found")
             case .transferred:
                 print("AppleID transferred")
+            @unknown default:
+                break
             }
         }
     }
-
+    @IBAction func appleSignInPressed(_ sender: UIButton) {
+        //Apple login button 2nd variant
+        handleAuthorizationAppleIDButtonPress()
+    }
+    
 }
 
 extension ViewController: ASAuthorizationControllerDelegate {
